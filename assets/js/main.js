@@ -67,7 +67,7 @@ function shwoData(myData) {
 }
 
 searchButton.addEventListener("click", () => {
-    getData(searchInput.value)
+    getData(searchInput.value.trime())
     document.querySelector(".data").style.display = "block";
 })
 
