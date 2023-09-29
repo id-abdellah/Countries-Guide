@@ -1,0 +1,147 @@
+@use "mixins" as *;
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+:root {
+    --mainColor: rgba(255, 0, 0, 0.518);
+}
+
+@include resetElements;
+
+:root {
+    scroll-behavior: smooth;
+}
+
+body {
+    overflow-x: hidden;
+    background-color: #444;
+    font-family: "poppins", sans-serif;
+    min-height: 100dvh;
+    position: relative;
+}
+
+/* ---- */
+
+.app_wrapper {
+    padding: 20px;
+    background-color: #222;
+    border-radius: 4px;
+    width: 300px;
+    margin: 50px auto;
+}
+
+.data {
+    display: none;
+}
+
+.app_wrapper .searche {
+    margin-bottom: 20px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+
+    * {
+        display: block;
+    }
+
+    input {
+        padding: 8px 4px;
+        width: 75%;
+        background-color: transparent;
+        border: none;
+        outline: none;
+        caret-color: var(--mainColor);
+        border-bottom: 1px solid var(--mainColor);
+        color: white;
+    }
+
+    button {
+        width: 20%;
+        padding: 6px;
+        border: 0;
+        outline: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 20px;
+        cursor: pointer;
+        background-color: var(--mainColor);
+        transition: .3s;
+
+        &:hover {
+            filter: brightness(80%);
+        }
+
+        &:active {
+            scale: .96;
+        }
+    }
+}
+
+.app_wrapper .country_img {
+    display: flex;
+    width: 100%;
+    align-items: center;
+
+    * {
+        width: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+    }
+
+    .flag::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        height: 100%;
+        width: 1px;
+        background-color: var(--mainColor);
+    }
+
+    .cotOfArme {
+        width: 120px;
+    }
+}
+
+.app_wrapper .country_name {
+    color: white;
+    text-align: center;
+    font-weight: 600;
+    font-size: 14px;
+    margin-block: 20px;
+    color: var(--mainColor);
+}
+
+
+.app_wrapper .additional_inforamtions {
+    li span {
+        color: var(--mainColor);
+        font-weight: 600;
+        font-size: 14px;
+        margin-inline-end: 8px;
+    }
+
+    li {
+        color: white;
+        font-size: 12px;
+        margin-block: 10px;
+    }
+
+    li:has(a) {
+        a {
+            color: var(--mainColor);
+            text-decoration: underline;
+            text-underline-offset: 2px;
+        }
+    }
+}
+
+.error_case {
+    color: red;
+    text-align: center;
+    font-size: 14px;
+    display: none;
+}
